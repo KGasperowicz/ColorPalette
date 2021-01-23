@@ -30,7 +30,7 @@ const hexDataAll = (e) => {
     element.innerHTML = "COPIED";
     setTimeout(() => {
       element.style.opacity = 0;
-    }, 2000 + i * 500);
+    }, 800 + i * 100);
   });
 
   const x = Array.from(allColors)
