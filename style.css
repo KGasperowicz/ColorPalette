@@ -189,7 +189,7 @@ button:focus {
         padding: 0;
     }
     button {
-        font-size: 1.2rem;
+        font-size: 0.6rem;
         }
 }
 
@@ -231,8 +231,5 @@ button:focus {
         padding: 0;
     }   
     
-    button {
-    font-size: 0.8rem;
-    }
 }
 
