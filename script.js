@@ -5,6 +5,32 @@ let $colorDownload;
 $color = document.querySelectorAll(".colorTile");
 $colorDownload = document.querySelectorAll(".color-download");
 
+const addP = (parentElement, text) => {
+  const el = document.createElement("p");
+  el.innerHTML = text;
+  parentElement.appendChild(el);
+};
+
+const main = () => {
+  const colorTileData = document.querySelectorAll(".color-inner");
+  colorTileData.forEach(element =>{
+    const dataHex = element.dataset.hex;
+    const [name, color] = dataHex.split("#");
+    element.style["background-color"] = `#${color}`;
+
+
+    addP(element, name);
+    addP(element, `#${color}`);
+    // const nameElement = document.createElement("p");
+    // nameElement.innerHTML = name;
+    // element.appendChild(nameElement);
+
+    // const colorElement = document.createElement("p");
+    // colorElement.innerHTML = "#"+color;
+    // element.appendChild(colorElement);
+  })
+};
+
 const colorTileHover = (e) => {
   const $colorHover = e.target.querySelector(".color-hover");
   $colorHover.style.opacity = 0.9;
@@ -52,3 +78,5 @@ $color.forEach((element) => {
 $colorDownload.forEach((element) => {
   element.addEventListener("click", hexDataAll);
 });
+
+document.addEventListener('DOMContentLoaded', main);
